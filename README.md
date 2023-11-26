@@ -6,9 +6,32 @@ O Problema de Transporte na logística visa otimizar a distribuição de mercado
 
 ## Problema 
 
-Uma empresa chamada "GreenLife" que se especializa no fornecimento de produtos orgânicos frescos para diversos estados do Brasil. A GreenLife estabeleceu parcerias com as 100 cidades mais populosas para atuarem como fornecedores, e elas visam distribuir seus produtos de forma eficiente para 27 estados. A empresa busca otimizar seus custos de transporte determinando as rotas de envio mais econômicas
+Uma empresa chamada "GreenLife" que se especializa no fornecimento de produtos orgânicos frescos para diversos estados do Brasil. A GreenLife estabeleceu parcerias com as 100 cidades mais populosas para atuarem como fornecedores, e elas visam distribuir seus produtos de forma eficiente para 27 estados. A empresa busca maximizar seus lucros no transporte determinando as rotas de envio mais econômicas.
 
-A GreenLife precisa determinar as quantidades de envio ideais de cada cidade fornecedora para cada estado para minimizar o custo total de transporte, atendendo à demanda de todos os estados e garantindo que nenhum fornecedor superforneça.
+A GreenLife busca maximizar seus lucros, considerando as quantidades ótimas a serem enviadas de cada fornecedor para cada estado. A função objetivo reflete a maximização do lucro total, considerando os lucros por unidade em cada rota. As restrições garantem que a demanda de cada estado seja atendida e que cada fornecedor não envie mais do que sua oferta.
+
+## Modelagem Matemática
+​
+Xij: Quantidade de recursos enviados do fornecedor i para o destino j.
+​
+Si: Quantidade de recursos disponíveis no fornecedor i.
+
+Dj: Quantidade de recursos necessários no destino j.
+
+### Objetivo
+
+`Minimizar o custo total de transporte:`
+
+ $`min \sum_{i=1}^{n} \sum_{j=1}^{m} c_{ij} x_{ij}`$ 
+
+ `Restrições`
+ * A demanda de cada destino deve ser atendida:
+ $`\sum_{i=1}^{n} x_{ij} = d_j \quad \forall j = 1, 2, \ldots, m`$
+
+ * A oferta de cada fornecedor não deve ser superada:
+ $`x_{ij} \le s_i \quad \forall i = 1, 2, \ldots, n`$
+
+
 
 ## Codigo
 
@@ -77,119 +100,103 @@ def calculate_total_cost(bfs, weights):
         print(f"  {v} * {weight} = {v * weight}")
         total_cost += v * weight
     return total_cost
-```
-`def calculate_total_cost(bfs, weights):` Define uma função chamada calculate_total_cost que calcula o custo total das alocações multiplicado pelos pesos associados.
 
-`Variável local:` total_cost é inicializada como zero.
-
-`Loop for:` Itera sobre as alocações na lista bfs e calcula o custo total multiplicando as quantidades alocadas pelos pesos associados.
-
-`print("Multiplications:"):` Imprime uma mensagem indicando que as próximas linhas mostrarão as multiplicações realizadas.
-
-`print(f" {v} * {weight} = {v * weight}"):` Imprime cada multiplicação realizada.
-
-`return total_cost:` Retorna o custo total calculado.
-
-```Python
 def getDemand(data):
     return [int(x) for x in data[len(data)-1][1:-1]]
-```
-`getDemand:` Retorna a demanda a partir dos dados.
 
-```Python
 def getSupply(data):
     return [int(x[-1]) for x in data[1:-1]]
-```
 
-`getSupply:` Retorna a oferta a partir dos dados.
-
-```Python
 def getWeights(data):
     return [[int(value) for value in line[1:-1]] for line in data[1:-1]]
-```
-`getWeights:` Retorna os pesos a partir dos dados.
 
-```Python
 dados = ler_csv("Dados.csv")
-```
-`Leitura de dados:` Lê os dados do arquivo CSV "Dados.csv" usando a função ler_csv.
 
-```Python
 demand = getDemand(dados)
 supply = getSupply(dados)
 weights = getWeights(dados)
-```
-`demand = getDemand(dados):` Obtém a demanda associada a cada destino.
 
-`supply = getSupply(dados):` Obtém a oferta associada a cada origem.
-
-`weights = getWeights(dados):` Obtém uma matriz bidimensional de pesos associados ao transporte de mercadorias.
-
-```Python
 bfs = north_west_corner(supply, demand)
-```
-`bfs = north_west_corner(supply, demand):`
 
-`supply` e `demand` são listas que representam a oferta e demanda, respectivamente.
-
-`north_west_corner` é uma função que implementa o método "North-West Corner" para encontrar alocações iniciais.
-
-`bfs` recebe o resultado da aplicação do método, representado como uma lista de tuplas. Cada tupla contém a informação da alocação: índice da oferta, índice da demanda e quantidade alocada.
-
-```Python
 total_cost = calculate_total_cost(bfs, weights)
-```
-`total_cost = calculate_total_cost(bfs, weights):`
 
-`bfs` é a lista de tuplas representando as alocações iniciais obtidas pelo método "North-West Corner".
-
-`weights` é uma matriz bidimensional que contém os pesos associados ao transporte de mercadorias de cada origem para cada destino.
-
-`calculate_total_cost` é uma função que multiplica as quantidades alocadas pelos pesos correspondentes e soma esses valores para calcular o custo total.
-
-`total_cost` armazena o resultado desse cálculo.
-
-```Python
 print(weights)
-```
-`print(weights):`
-`weights` é uma matriz bidimensional obtida através da função getWeights, representando os custos ou pesos associados a cada rota de transporte.
 
-`print(weights)` exibe essa matriz na saída padrão, proporcionando uma visualização dos custos de transporte entre origens e destinos.
-
-```Python
 print("\nNorth-West Corner Method Result:")
 for (i, j), v in bfs:
     print(f"  ({i}, {j}): {v}")
-```
-`print("\nNorth-West Corner Method Result:"):` Imprime uma mensagem indicando que os resultados seguintes são provenientes do método "North-West Corner".
 
-`for (i, j), v in bfs:` Inicia um loop que percorre cada tupla em bfs, que representa uma alocação inicial.
-`(i, j)` são os índices da oferta e demanda.
-`v` é a quantidade alocada.
-
-`print(f" ({i}, {j}): {v}"):` Imprime cada alocação no formato "(oferta, demanda): quantidade".
-
-```Python
 print("\nTotal Cost after multiplying with weights:")
 print(total_cost)
 ```
-`print("\nTotal Cost after multiplying with weights:"):` Imprime uma mensagem indicando que os resultados seguintes representam o custo total após a multiplicação com os pesos.
 
-`print(total_cost):` Imprime o valor da variável `total_cost`, que foi calculada pela função calculate_total_cost. Esse valor representa o custo total do transporte considerando as alocações iniciais multiplicadas pelos pesos associados.
+`calculate_total_cost(bfs, weights):`
+Essa função calcula o custo total do transporte considerando as alocações iniciais (bfs) e os pesos associados a cada rota (weights).
+Para cada alocação em bfs, a função multiplica a quantidade alocada pelo peso correspondente, exibindo essas multiplicações na saída padrão.
+O custo total é acumulado e retornado ao final.
+
+`getDemand(data), getSupply(data), getWeights(data):`
+Estas funções extraem a demanda, oferta e os pesos da matriz de dados lidos do arquivo CSV.
+getDemand retorna a demanda a partir da última linha dos dados.
+getSupply retorna a oferta a partir das linhas intermediárias dos dados.
+getWeights retorna uma matriz bidimensional de pesos a partir das linhas intermediárias dos dados.
+
+`Leitura de Dados:`
+Usa a função ler_csv para ler os dados do arquivo CSV chamado "Dados.csv".
+
+`Alocação Inicial com "North-West Corner":`
+Utiliza a função north_west_corner para encontrar alocações iniciais usando o método "North-West Corner". Os resultados são armazenados na lista bfs.
+
+`Cálculo do Custo Total:`
+Após as alocações, o código chama calculate_total_cost para calcular o custo total multiplicando as alocações pelos pesos associados.
+
+`Impressão dos Resultados:`
+Imprime a matriz de pesos, as alocações resultantes do método "North-West Corner" e o custo total após a multiplicação com os pesos.
 
 ## Resultados
+`Multiplicações:`
+
+![image](https://github.com/BryanWille/algoritmo-canto-noroeste/assets/71525414/77012f73-706f-47cb-bc4c-72185c2d144e)
+
+
+`Tabela`
+![image](https://github.com/BryanWille/algoritmo-canto-noroeste/assets/71525414/f29e93ea-e57b-4ee6-964e-a20b00aabbc5)
+
+
+`Resultados do metodo do canto noroeste`
+
+![image](https://github.com/BryanWille/algoritmo-canto-noroeste/assets/71525414/b709a4c0-42c5-40da-9932-c34362d928c8)
+
+`Resultado da multiplicação Final`
+
+![image](https://github.com/BryanWille/algoritmo-canto-noroeste/assets/71525414/6781a6fa-13fc-4dec-a271-0c70904918e0)
+
+## Complexidade Computacional
+No caso de um problema de transporte resolvido por métodos de programação linear, a complexidade pode ser aproximadamente descrita como `O(m*n)` onde `m`  é o número de fornecedores (cidades) e `n` é o número de destinos (estados). Isso se deve ao fato de que, em problemas de programação linear, os métodos de solução eficientes, como o método simplex, têm complexidade proporcional ao número de restrições e variáveis na formulação do problema.
+
+Assim, para um problema de transporte com 100 fornecedores e 27 destinos, a complexidade seria `O(100*27) = O(2700)`. Em termos práticos, essa complexidade é geralmente considerada razoável e eficiente para tamanhos de problemas moderados.
 
 ## Aplicações do Problema de Transporte na Vida Real:
 O Problema de Transporte é uma ferramenta valiosa em diversas aplicações práticas, incluindo:
 
 - Distribuição: o Problema de Transporte pode ser usado para determinar a melhor maneira de distribuir bens de um fabricante para diferentes varejistas.
 - Manufatura: o Problema de Transporte pode ser usado para determinar a melhor maneira de transportar matérias-primas de fornecedores para diferentes fábricas.
-- Varejo: o Problema de Transporte pode ser usado para determinar a melhor maneira de transportar produtos de um
+- Varejo: o Problema de Transporte pode ser usado para determinar a melhor maneira de transportar produtos de um centro de distribuição para diferentes lojas.
+- Saúde: o Problema de Transporte pode ser usado para determinar a melhor maneira de transportar sangue ou outros órgãos para diferentes hospitais.
+- Energia: o Problema de Transporte pode ser usado para determinar a melhor maneira de transportar energia elétrica de uma usina para diferentes consumidores.
+- Logística militar: o Problema de Transporte pode ser usado para determinar a melhor maneira de transportar suprimentos para tropas em campo.
 
 
-## Conclusões e Possíveis Extensões:
+## Conclusões:
 
-Em conclusão, o código apresenta uma implementação eficiente do método "North-West Corner" para resolver problemas de transporte, demonstrando o processo desde a leitura de dados até a visualização dos resultados. A funcionalidade básica é sólida, oferecendo uma base para abordar problemas práticos de logística e distribuição
+Em conclusão, o código apresenta uma implementação eficiente do método "Canto Noroeste" para resolver problemas de transporte, demonstrando o processo desde a leitura de dados até a visualização dos resultados. A funcionalidade básica é sólida, oferecendo uma base para abordar problemas práticos de logística e distribuição
 
+## Referências:
 
+[Referência](https://radzion.com/blog/operations/corner)
+
+## Grupo
+- [Bryan Wille](https://github.com/BryanWille)
+- [Bernardo Bertouldi](https://github.com/Benkars)
+- [Cauã Henrique](https://github.com/CauaHvS)
+- [Pedro Augusto](https://github.com/Pdro-Allgusto)
