@@ -43,7 +43,7 @@ def getSupply(data):
 def getWeights(data):
     return [[int(value) for value in line[1:-1]] for line in data[1:-1]]
 
-dados = ler_csv("dados.csv")
+dados = ler_csv("dados_exercicio.csv")
 
 demand = getDemand(dados)
 supply = getSupply(dados)
