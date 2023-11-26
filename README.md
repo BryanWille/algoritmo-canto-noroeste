@@ -30,8 +30,11 @@ Considere situações em que o método pode não ser aplicável ou produzir solu
 Compare o Método do Canto Noroeste com outros métodos para resolver o Problema de Transporte, como o Método de Mínimos Quadrados, Método de Aproximação de Vogel, entre outros.
 
 ## Aplicações do Problema de Transporte na Vida Real:
-Explore casos reais em que o Problema de Transporte é uma ferramenta valiosa.
-Destaque setores específicos, como distribuição, manufatura, e varejo.
+O Problema de Transporte é uma ferramenta valiosa em diversas aplicações práticas, incluindo:
+
+- Distribuição: o Problema de Transporte pode ser usado para determinar a melhor maneira de distribuir bens de um fabricante para diferentes varejistas.
+- Manufatura: o Problema de Transporte pode ser usado para determinar a melhor maneira de transportar matérias-primas de fornecedores para diferentes fábricas.
+- Varejo: o Problema de Transporte pode ser usado para determinar a melhor maneira de transportar produtos de um
 
 
 ## Conclusões e Possíveis Extensões:
