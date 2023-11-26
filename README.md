@@ -194,6 +194,8 @@ O Problema de Transporte é uma ferramenta valiosa em diversas aplicações prá
 
 Em conclusão, o código apresenta uma implementação eficiente do método "Canto Noroeste" para resolver problemas de transporte, demonstrando o processo desde a leitura de dados até a visualização dos resultados. A funcionalidade básica é sólida, oferecendo uma base para abordar problemas práticos de logística e distribuição
 
+Assim, para o problema da empresa GreenLife, o custo mínimo encontrado pelo algoritmo é de 70559, sendo esse valor obtido através do método Canto Noroeste.
+
 ## 📚 Referências:
 
 [Radzion: Transportation Problem North West Corner Method with Python
