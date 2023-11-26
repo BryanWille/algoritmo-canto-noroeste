@@ -1,5 +1,3 @@
-# Canto Noroeste
-
 # Problema de Transporte com o Método do Canto Noroeste em Python
 
 ## Introdução
