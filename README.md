@@ -178,18 +178,7 @@ print(total_cost)
 
 `print(total_cost):` Imprime o valor da variável `total_cost`, que foi calculada pela função calculate_total_cost. Esse valor representa o custo total do transporte considerando as alocações iniciais multiplicadas pelos pesos associados.
 
-## Complexidade Computacional:
-Discuta a complexidade computacional do Método do Canto Noroeste.
-Considere situações em que o método pode não ser a abordagem mais eficiente.
-
-
-## Limitações e Considerações Práticas:
-Aborde as limitações do Método do Canto Noroeste.
-Considere situações em que o método pode não ser aplicável ou produzir soluções subótimas.
-
-
-## Comparação com Outros Métodos:
-Compare o Método do Canto Noroeste com outros métodos para resolver o Problema de Transporte, como o Método de Mínimos Quadrados, Método de Aproximação de Vogel, entre outros.
+## Resultados
 
 ## Aplicações do Problema de Transporte na Vida Real:
 O Problema de Transporte é uma ferramenta valiosa em diversas aplicações práticas, incluindo:
@@ -200,5 +189,7 @@ O Problema de Transporte é uma ferramenta valiosa em diversas aplicações prá
 
 
 ## Conclusões e Possíveis Extensões:
-Resuma os principais pontos discutidos.
-Aponte para possíveis extensões ou melhorias no método
+
+Em conclusão, o código apresenta uma implementação eficiente do método "North-West Corner" para resolver problemas de transporte, demonstrando o processo desde a leitura de dados até a visualização dos resultados. A funcionalidade básica é sólida, oferecendo uma base para abordar problemas práticos de logística e distribuição
+
+
