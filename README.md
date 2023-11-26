@@ -1,16 +1,17 @@
 # Problema de Transporte com o Método do Canto Noroeste em Python
 
-## Introdução
+## 📖 Introdução
 
 O Problema de Transporte na logística visa otimizar a distribuição de mercadorias entre diversos pontos de origem e destinos, minimizando os custos totais de transporte. Comum em cenários de distribuição e redes de suprimento, o Método do Canto Noroeste é uma heurística empregada para encontrar uma solução inicial. Inicia-se a alocação no canto noroeste da tabela de custos, progredindo de maneira a otimizar o transporte considerando as restrições de oferta e demanda, sendo uma abordagem eficaz na resolução desse desafio logístico.
 
-## Problema 
+## 🚚 Problema 
 
 Uma empresa chamada "GreenLife" que se especializa no fornecimento de produtos orgânicos frescos para diversos estados do Brasil. A GreenLife estabeleceu parcerias com as 100 cidades mais populosas para atuarem como fornecedores, e elas visam distribuir seus produtos de forma eficiente para 27 estados. A empresa busca maximizar seus lucros no transporte determinando as rotas de envio mais econômicas.
 
 A GreenLife busca maximizar seus lucros, considerando as quantidades ótimas a serem enviadas de cada fornecedor para cada estado. A função objetivo reflete a maximização do lucro total, considerando os lucros por unidade em cada rota. As restrições garantem que a demanda de cada estado seja atendida e que cada fornecedor não envie mais do que sua oferta.
+- [Planilha com o Problema](https://docs.google.com/spreadsheets/d/10Eqr6RB5kfVWvIdKsb22g8gDjI9Nlkv6QNh_0cbVwlc/edit?usp=sharing)
 
-## Modelagem Matemática
+## 🔢 Modelagem Matemática
 ​
 Xij: Quantidade de recursos enviados do fornecedor i para o destino j.
 ​
@@ -18,7 +19,7 @@ Si: Quantidade de recursos disponíveis no fornecedor i.
 
 Dj: Quantidade de recursos necessários no destino j.
 
-### Objetivo
+## 🎯 Objetivo
 
 `Minimizar o custo total de transporte:`
 
@@ -33,7 +34,7 @@ Dj: Quantidade de recursos necessários no destino j.
 
 
 
-## Codigo
+## 📜 Codigo
 
 ```Python
 import csv
@@ -153,30 +154,29 @@ Após as alocações, o código chama calculate_total_cost para calcular o custo
 `Impressão dos Resultados:`
 Imprime a matriz de pesos, as alocações resultantes do método "North-West Corner" e o custo total após a multiplicação com os pesos.
 
-## Resultados
+## 📊 Resultados
 `Multiplicações:`
 
-![image](https://github.com/BryanWille/algoritmo-canto-noroeste/assets/71525414/77012f73-706f-47cb-bc4c-72185c2d144e)
+![image](https://github.com/BryanWille/algoritmo-canto-noroeste/assets/84272231/cc4dd90c-0104-48ae-9dc8-df8b35c2dec2)
 
 
-`Tabela`
-![image](https://github.com/BryanWille/algoritmo-canto-noroeste/assets/71525414/f29e93ea-e57b-4ee6-964e-a20b00aabbc5)
-
+`Tabela de pesos`
+![image](https://github.com/BryanWille/algoritmo-canto-noroeste/assets/84272231/1601fd77-945a-43bc-8b34-a0f07fcf2bc2)
 
 `Resultados do metodo do canto noroeste`
 
-![image](https://github.com/BryanWille/algoritmo-canto-noroeste/assets/71525414/b709a4c0-42c5-40da-9932-c34362d928c8)
+![image](https://github.com/BryanWille/algoritmo-canto-noroeste/assets/84272231/eecf3149-aa33-44ec-b2d0-434f8e9c39f0)
 
 `Resultado da multiplicação Final`
 
-![image](https://github.com/BryanWille/algoritmo-canto-noroeste/assets/71525414/6781a6fa-13fc-4dec-a271-0c70904918e0)
+![image](https://github.com/BryanWille/algoritmo-canto-noroeste/assets/84272231/d5a2a92f-db3a-43ba-b412-cbef91c77303)
 
-## Complexidade Computacional
+## 🔄 Complexidade Computacional
 No caso de um problema de transporte resolvido por métodos de programação linear, a complexidade pode ser aproximadamente descrita como `O(m*n)` onde `m`  é o número de fornecedores (cidades) e `n` é o número de destinos (estados). Isso se deve ao fato de que, em problemas de programação linear, os métodos de solução eficientes, como o método simplex, têm complexidade proporcional ao número de restrições e variáveis na formulação do problema.
 
 Assim, para um problema de transporte com 100 fornecedores e 27 destinos, a complexidade seria `O(100*27) = O(2700)`. Em termos práticos, essa complexidade é geralmente considerada razoável e eficiente para tamanhos de problemas moderados.
 
-## Aplicações do Problema de Transporte na Vida Real:
+## 🌐  Aplicações do Problema de Transporte na Vida Real:
 O Problema de Transporte é uma ferramenta valiosa em diversas aplicações práticas, incluindo:
 
 - Distribuição: o Problema de Transporte pode ser usado para determinar a melhor maneira de distribuir bens de um fabricante para diferentes varejistas.
@@ -187,15 +187,16 @@ O Problema de Transporte é uma ferramenta valiosa em diversas aplicações prá
 - Logística militar: o Problema de Transporte pode ser usado para determinar a melhor maneira de transportar suprimentos para tropas em campo.
 
 
-## Conclusões:
+## 🔍 Conclusões:
 
 Em conclusão, o código apresenta uma implementação eficiente do método "Canto Noroeste" para resolver problemas de transporte, demonstrando o processo desde a leitura de dados até a visualização dos resultados. A funcionalidade básica é sólida, oferecendo uma base para abordar problemas práticos de logística e distribuição
 
-## Referências:
+## 📚 Referências:
 
-[Referência](https://radzion.com/blog/operations/corner)
+[Radzion: Transportation Problem North West Corner Method with Python
+](https://radzion.com/blog/operations/corner)
 
-## Grupo
+## 👥 Grupo
 - [Bryan Wille](https://github.com/BryanWille)
 - [Bernardo Bertouldi](https://github.com/Benkars)
 - [Cauã Henrique](https://github.com/CauaHvS)
