@@ -9,7 +9,7 @@ O Problema de Transporte na logística visa otimizar a distribuição de mercado
 Uma empresa chamada "GreenLife" que se especializa no fornecimento de produtos orgânicos frescos para diversos estados do Brasil. A GreenLife estabeleceu parcerias com as 100 cidades mais populosas para atuarem como fornecedores, e elas visam distribuir seus produtos de forma eficiente para 27 estados. A empresa busca maximizar seus lucros no transporte determinando as rotas de envio mais econômicas.
 
 A GreenLife busca maximizar seus lucros, considerando as quantidades ótimas a serem enviadas de cada fornecedor para cada estado. A função objetivo reflete a maximização do lucro total, considerando os lucros por unidade em cada rota. As restrições garantem que a demanda de cada estado seja atendida e que cada fornecedor não envie mais do que sua oferta.
-- [Planilha com o Problema](https://docs.google.com/spreadsheets/d/10Eqr6RB5kfVWvIdKsb22g8gDjI9Nlkv6QNh_0cbVwlc/edit?usp=sharing)
+- 📗 [Planilha com o Problema](https://docs.google.com/spreadsheets/d/10Eqr6RB5kfVWvIdKsb22g8gDjI9Nlkv6QNh_0cbVwlc/edit?usp=sharing)
 
 ## 🔢 Modelagem Matemática
 ​
