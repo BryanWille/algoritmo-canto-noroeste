@@ -192,9 +192,7 @@ O Problema de Transporte é uma ferramenta valiosa em diversas aplicações prá
 
 ## 🔍 Conclusões:
 
-Em conclusão, o código apresenta uma implementação eficiente do método "Canto Noroeste" para resolver problemas de transporte, demonstrando o processo desde a leitura de dados até a visualização dos resultados. A funcionalidade básica é sólida, oferecendo uma base para abordar problemas práticos de logística e distribuição
-
-Assim, para o problema da empresa GreenLife, o custo mínimo encontrado pelo algoritmo é de 70559, sendo esse valor obtido através do método Canto Noroeste.
+Em resumo, o código eficientemente implementa o método "Canto Noroeste" para solucionar problemas de transporte, abordando desde a leitura de dados até a visualização dos resultados. Sua funcionalidade básica é robusta, proporcionando uma base sólida para lidar com desafios práticos de logística e distribuição. Para o caso da GreenLife, o algoritmo identifica um custo mínimo de 70559 usando o método citado acima.
 
 ## 📚 Referências:
 
